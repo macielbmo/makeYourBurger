@@ -77,5 +77,28 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "name": "Maciel",
+      "carne": "Maminha",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "name": "Maciel Barboza",
+      "carne": "Alcatra",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    }
+  ]
 }
