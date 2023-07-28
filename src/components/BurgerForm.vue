@@ -18,7 +18,9 @@
           <label for="pao">Escolha o Pão:</label>
           <select name="pao" id="pao" v-model="pao">
             <option value="">Seleciona o seu pão</option>
-            <option value="integral">Integral</option>
+            <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">
+              {{ pao.tipo }}
+            </option>
           </select>
         </div>
 
@@ -26,7 +28,9 @@
           <label for="carne">Escolha a carne:</label>
           <select name="carne" id="carne" v-model="pao">
             <option value="">Seleciona o tipo de carne</option>
-            <option value="Maminha">Maminha</option>
+            <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">
+              {{ carne.tipo }}
+            </option>
           </select>
         </div>
 
@@ -34,14 +38,19 @@
           <label id="opcionais-title" for="opcionais"
             >Selecione os opcionais:</label
           >
-          <div class="checkbox-container">
+          <div
+            class="checkbox-container"
+            v-for="opcional in opcionaisdata"
+            :key="opcional.id"
+          >
             <input
+              for="opcionail"
               type="checkbox"
               name="opcionais"
               v-model="opcionais"
-              value="salame"
+              :value="opcional.tipo"
             />
-            <span>Salame</span>
+            <span id="opcionail">{{ opcional.tipo }}</span>
           </div>
         </div>
 
@@ -56,12 +65,38 @@
 <script>
 export default {
   name: "BurgerForm",
+  data() {
+    return {
+      paes: null,
+      carnes: null,
+      opcionaisdata: null,
+      nome: null,
+      pao: null,
+      carne: null,
+      opcional: [],
+      status: "Solicitado",
+      msg: null,
+    };
+  },
+  methods: {
+    async getIngradientes() {
+      const req = await fetch("http://localhost:3000/ingredientes");
+      const data = await req.json();
+
+      this.paes = data.paes;
+      this.carnes = data.carnes;
+      this.opcionaisdata = data.opcionais;
+    },
+  },
+  mounted() {
+    this.getIngradientes();
+  },
 };
 </script>
 
 <style scoped>
 #burger-form {
-  max-width: 399px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
