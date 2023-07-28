@@ -1,5 +1,5 @@
 <template>
-  <NavBar :logo="logo_src" :alt="alt_name" />
+  <NavBar :logo="logo_src" :alt="app_name" />
   <router-view />
   <Footer />
 </template>
