@@ -101,27 +101,6 @@
       "id": 2
     },
     {
-      "name": "Maciel",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
-      "name": "Zeca",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 4
-    },
-    {
       "name": "Joana",
       "carne": "Veggie burger",
       "pao": "3 Queijos",
@@ -132,6 +111,18 @@
       ],
       "status": "Solicitado",
       "id": 5
+    },
+    {
+      "name": "José",
+      "carne": "Picanha",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Cebola roxa",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 6
     }
   ]
 }
