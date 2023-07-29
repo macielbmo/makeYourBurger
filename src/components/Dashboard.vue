@@ -1,4 +1,5 @@
 <template>
+  <Message :msg="msg" v-show="msg" />
   <div class="burger-table">
     <div>
       <div id="burger-table-heading">
@@ -48,6 +49,8 @@
 </template>
 
 <script>
+import Message from "./Message.vue";
+
 export default {
   name: "Dashboard",
   data() {
@@ -55,56 +58,56 @@ export default {
       burgers: null,
       burger_id: null,
       status: [],
+      msg: null,
     };
   },
   methods: {
     async getPedidos() {
       const req = await fetch("http://localhost:3000/burgers");
-
       const data = await req.json();
-
       this.burgers = data;
-
       // regastar os status
       this.getStatus();
     },
     async getStatus() {
       const req = await fetch("http://localhost:3000/status");
-
       const data = await req.json();
-
       this.status = data;
     },
     async deleteBurger(id) {
       const req = await fetch(`http://localhost:3000/burgers/${id}`, {
         method: "DELETE",
       });
-
       const res = await req.json();
-
       this.getPedidos();
-
       // msg pedido deletado
+      this.msg = `Pedido N°${id} cancelado com sucesso!`;
+
+      // limpar mensagem
+      setTimeout(() => (this.msg = ""), 3000);
     },
     async updateBurger(event, id) {
       const option = event.target.value;
-
       const dataJson = JSON.stringify({ status: option });
-
       const req = await fetch(`http://localhost:3000/burgers/${id}`, {
         method: "PATCH",
         headers: { "Content-type": "application/json" },
         body: dataJson,
       });
-
       const res = await req.json();
-
       console.log(res);
+
+      // msg status alterado
+      this.msg = `Statu do pedido N°${id} alterado para ${res.status}!`;
+
+      // limpar mensagem
+      setTimeout(() => (this.msg = ""), 3000);
     },
   },
   mounted() {
     this.getPedidos();
   },
+  components: { Message },
 };
 </script>
 

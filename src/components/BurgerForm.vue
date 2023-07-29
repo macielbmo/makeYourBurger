@@ -104,7 +104,7 @@ export default {
       });
       const res = await req.json();
 
-      // Ainda será adicionado, um mensagem confirmando o pedido
+      // Mensagem confirmando o pedido
       this.msg = `Pedido N°${res.id} realizado com sucesso!`;
 
       // limpar mensagem

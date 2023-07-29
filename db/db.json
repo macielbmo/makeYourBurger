@@ -86,7 +86,7 @@
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
@@ -101,30 +101,6 @@
       "id": 2
     },
     {
-      "name": "Joana",
-      "carne": "Veggie burger",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Tomate",
-        "Pepino",
-        "Cebola roxa"
-      ],
-      "status": "Finalizado",
-      "id": 5
-    },
-    {
-      "name": "José",
-      "carne": "Picanha",
-      "pao": "Parmesão e Orégano",
-      "opcionais": [
-        "Bacon",
-        "Cebola roxa",
-        "Cheddar"
-      ],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
       "name": "Jurandi",
       "carne": "Maminha",
       "pao": "3 Queijos",
@@ -133,7 +109,7 @@
         "Pepino",
         "Salame"
       ],
-      "status": "Finalizado",
+      "status": "Solicitado",
       "id": 7
     }
   ]
