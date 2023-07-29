@@ -97,7 +97,7 @@
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 2
     },
     {
@@ -109,7 +109,7 @@
         "Pepino",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 5
     },
     {
@@ -123,6 +123,18 @@
       ],
       "status": "Solicitado",
       "id": 6
+    },
+    {
+      "name": "Jurandi",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Pepino",
+        "Salame"
+      ],
+      "status": "Finalizado",
+      "id": 7
     }
   ]
 }
